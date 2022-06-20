@@ -1,9 +1,11 @@
 const express = require("express");
 const NodeCache = require("node-cache");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 const cache = new NodeCache({ stdTTL: 15 });
 
 app.get("/todos", (req, res) => {
