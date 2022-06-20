@@ -6,7 +6,7 @@ const cors = require("cors");
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
-const cache = new NodeCache({ stdTTL: 15 });
+const cache = new NodeCache({ stdTTL: 100 });
 
 app.get("/todos", (req, res) => {
   const todos = cache.get("todos");
