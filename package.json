@@ -12,6 +12,6 @@
     "node-cache": "^5.1.2"
   },
   "scripts": {
-    "dev": "node index.js"
+    "start": "node index.js"
   }
 }
