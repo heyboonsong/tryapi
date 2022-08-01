@@ -16,7 +16,7 @@ app.get("/todos", (req, res) => {
 
 app.post("/todos", (req, res) => {
   if (!req.body.title || !req.body.description)
-    return res.status(404).json({ message: "bad request" });
+    return res.status(400).json({ message: "bad request" });
   let todos = cache.get("todos");
   if (!todos) todos = [];
   cache.set("todos", [
